@@ -1,0 +1,25 @@
+{
+  "name": "vue-chenyao-bk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "test": "",
+    "push": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "@vuepress/plugin-register-components": "^1.8.2", 
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-cursor-effects": "^1.0.2",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-go-top": "^1.0.4",
+    "vuepress-plugin-ribbon": "^1.0.4"
+  },
+  "dependencies": {
+    "vuepress-theme-reco": "^1.6.6"
+  },
+  "description": "chenyao-blog"
+}
