@@ -1,5 +1,5 @@
 ---
-title: rollop入门
+title: rollop打包库与vue-cli打包库
 date: 2022-05-07
 sidebar: 'auto'
 categories:
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-# rollop介绍
+## rollop介绍
 
 rollp.js 是一款打包工具，可以打包成库;
 
@@ -19,7 +19,7 @@ es  --- es2015中module的引入，import 多用于前端项目
 
 umd --- amd与cmd的通用版本，可以在浏览器中使用
 
-# 配置rollup.config.js
+## 配置rollup.config.js
 
 ```js
 // rollup.config.js
@@ -71,7 +71,7 @@ export const getAnswer =  function () {
 </body>
 </html>
 ```
-# 打包vue组件的例子
+## vite打包vue组件的例子
 
 ```js
 // rollup.config.js
@@ -91,7 +91,7 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Yjw-ui',
+    name: 'Yjw-ui', //打包后的全局变量的名称
     file: 'dist/lib/yjw-ui.js',
     format: 'umd',
     plugins: [terser()]
@@ -154,6 +154,7 @@ export default {
         });
         // 全局引入
         // app.use( window['Yjw-ui'].default );
+        // app.use( window['Yjw-ui'].registerJwUi);
         app.mount("#app");
         
     </script>
@@ -182,3 +183,55 @@ export default registerJwUi;
 源码在vue中可以直接 app.use但是打包后需要引入的是app.use( window['Yjw-ui'].default )
 
 这个.default 暴露的就是  registerJwUi()  根据vue的特性则它将被视为 install 方法。
+
+
+## vue-cli 打包
+
+```json
+
+ "scripts": {
+   "bundel": "vue-cli-service build --target lib --name JwUi --dest lib src/lib/index.js"
+  },
+
+```
+
+主要需要四个参数：
+
+--target: 默认为构建应用，改为 lib 即可启用构建库模式
+
+--name: 输出文件名
+
+--dest: 输出目录，默认为 dist，这里我们改为 lib
+
+--entry: 入口文件路径，默认为 src/App.vue，这里改为 src/lib/index.js
+
+
+打包完成后也是照常使用
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./JwUi.css">
+</head>
+<body>
+    <div id="app">
+        <jw-button>button</jw-button>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./JwUi.umd.js"></script>
+
+    <script>
+      
+        const app = Vue.createApp()
+        app.use(JwUi.registerJwUi)
+        app.mount("#app")
+    </script>
+</body>
+</html>
+```
+
