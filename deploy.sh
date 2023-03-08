@@ -13,7 +13,7 @@ cd docs/.vuepress/dist
 # 如果有token环境变量
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
-  githubUrl=git@github.com:xugaoyi/blog.git
+  githubUrl=git@github.com:444722407/blog.git
 else
   msg='来自github action的自动部署'
   githubUrl=https://44722407:${GITHUB_TOKEN}@github.com/444722407/444722407.github.io.git

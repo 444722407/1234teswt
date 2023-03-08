@@ -24,7 +24,7 @@ module.exports = {
                 recoverTime: 2000,
          },
         ],
-        ['@vuepress-reco/vuepress-plugin-kan-ban-niang',{
+        ['@vuepress-reco/vuepress-plugin-kan-ban-niang',{  
             theme:['haru1'],
             clean:true,
             width:220,
