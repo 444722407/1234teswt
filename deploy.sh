@@ -23,28 +23,15 @@ else
 
 fi
 
-echo $msg
-
-echo $githubUrl
-
 git init
-
-echo "init"
-
 
 git add -A
 
-echo "add"
 
-
-git commit -m $msg
-
-
-echo "commit"
+git commit -m ${msg}
 
 # # 如果发布到 https://<USERNAME>.github.io
 git push -f $githubUrl  master
 
-echo "push"
-
+cd -
 
