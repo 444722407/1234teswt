@@ -15,8 +15,11 @@ else
   cd docs/.vuepress/dist
   
   msg='来自github action的自动部署'
+
   githubUrl=https://44722407:${GITHUB_TOKEN}@github.com/444722407/444722407.github.io.git
+
   git config --global user.name "chenyao"
+
   git config --global user.email "444722407@qq.com"
 fi
 
