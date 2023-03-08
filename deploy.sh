@@ -27,7 +27,7 @@ git init
 
 git add -A
 
-git commit -m ${msg}
+git commit -m "$msg"
 
 # # 如果发布到 https://<USERNAME>.github.io
 git push -f $githubUrl  master
