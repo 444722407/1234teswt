@@ -32,5 +32,5 @@ git commit -m "$msg"
 # # 如果发布到 https://<USERNAME>.github.io
 git push -f $githubUrl  master
 
-cd -
+# cd -
 
