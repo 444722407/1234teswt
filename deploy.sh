@@ -21,6 +21,8 @@ else
 
   git config --global user.email "444722407@qq.com"
 
+  cd -
+
 fi
 
 git init
@@ -32,5 +34,5 @@ git commit -m "$msg"
 # # 如果发布到 https://<USERNAME>.github.io
 git push -f $githubUrl  master
 
-# cd -
+
 
