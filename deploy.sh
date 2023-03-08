@@ -10,7 +10,13 @@ npm run docs:build
 cd docs/.vuepress/dist
 
 # deploy to github
-# 如果有token环境变量
+# 如果$GITHUB_TOKEN环境变量字符串 长度为0则为true  本地长度为0
+echo "test----------"
+
+echo $GITHUB_TOKEN
+echo [-z "$GITHUB_TOKEN"]
+
+echo "--------test"
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:444722407/blog.git
