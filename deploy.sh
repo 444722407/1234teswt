@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
-
 # 确保脚本抛出遇到的错误
 set -e
 
-# deploy to github
 # 如果$GITHUB_TOKEN环境变量字符串 长度为0则为true  本地长度为0 线上打包环节为保密的值不为0
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy-local'
   githubUrl=git@github.com:444722407/blog.git
+
 else
   # 生成静态文件
   npm run docs:build
@@ -24,11 +23,11 @@ else
 fi
 
 
-git init
-git add -A
-git commit -m $msg
+# git init
+# git add -A
+# git commit -m $msg
 
-# 如果发布到 https://<USERNAME>.github.io
-git push -f $githubUrl  master
+# # # 如果发布到 https://<USERNAME>.github.io
+# git push -f $githubUrl  master
 
 cd -
