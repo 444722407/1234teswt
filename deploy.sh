@@ -24,12 +24,27 @@ else
 fi
 
 echo $msg
+
 echo $githubUrl
 
-# git init
-# git add -A
-# git commit -m $msg
+git init
 
-# # # 如果发布到 https://<USERNAME>.github.io
-# git push -f $githubUrl  master
+echo "init"
+
+
+git add -A
+
+echo "add"
+
+
+git commit -m $msg
+
+
+echo "commit"
+
+# # 如果发布到 https://<USERNAME>.github.io
+git push -f $githubUrl  master
+
+echo "push"
+
 
