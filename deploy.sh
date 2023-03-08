@@ -23,11 +23,13 @@ else
 
 fi
 
+echo $msg
+echo $githubUrl
 
-git init
-git add -A
-git commit -m $msg
+# git init
+# git add -A
+# git commit -m $msg
 
-# # 如果发布到 https://<USERNAME>.github.io
-git push -f $githubUrl  master
+# # # 如果发布到 https://<USERNAME>.github.io
+# git push -f $githubUrl  master
 
